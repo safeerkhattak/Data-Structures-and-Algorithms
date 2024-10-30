@@ -68,6 +68,17 @@ class LinkedList {
     }
     return currentNode;
   }
+  printList() {
+    let currentNode = this.head;
+    let list = [];
+    console.log("current node in loop", currentNode);
+    while (currentNode !== null) {
+      list.push(currentNode.value);
+
+      currentNode = currentNode.next;
+    }
+    return list;
+  }
 }
 
 const linkedList = new LinkedList(1);
@@ -80,5 +91,8 @@ console.log("append", linkedList.append(6));
 console.log("append complete", JSON.stringify(linkedList.append(8)));
 
 // console.log("append complete", JSON.stringify(linkedList.insert(2, 3)));
+console.log("print;list", linkedList.printList());
 
 console.log("append complete", JSON.stringify(linkedList.reverseLinkedList()));
+
+console.log("print;list reverse", linkedList.printList());
